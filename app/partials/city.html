@@ -1,10 +1,112 @@
 
 <h1>{{this.cityName}}</h1>
-<h3>Forecast</h3>
-<div data-ng-repeat="(key, value) in this.currentFore">
-  <td>{{key}}</td>:
-  <td>{{value | json }}</td>
-</div>
-<td>{{this.forecast | json}}</td>
-<h3>News</h3>
-<div>{{this.news | json}}</div>
+<form>
+  <input id="input" type="text" placeholder="Enter Your City">
+  <input id="input" type="text" placeholder="Enter Your State">
+  <button id="submit">Go</button>
+</form>
+<section id="Forecast">
+  <h3>Forecast</h3>
+  <div data-ng-repeat="(key, value) in this.currentFore">
+    <ul>
+      <td> {{key}} </td>   :  <td> {{value | json}} </td>
+    </ul>
+  </div>
+</section>
+<section id="News">
+  <h3>News</h3>
+    <div id="news-content" data-ng-repeat="value in this.listNews">
+        <ul>
+          <li><a href="{{value.url}}"> {{value.title}} </a></li>
+        <ul>
+    </div>
+<section>
+
+<style>
+/*
+color1:#406a76
+color2:#004a79
+color3:#116597
+color4:#b8ab98
+*/
+form input[type="text"] {
+height: 40%;
+width: 45%;
+margin: 0;
+padding: 0;
+font-size: 50px;
+}
+#Forecast{
+  width:40%;
+  height:30%;
+  padding:10% 10%;
+  font-size:1.5em;
+}
+#News{
+  text-decoration: none;
+  width:80%;
+  height:50%;
+  padding:10% 10%;
+  font-size:1.5em
+}
+#News a {
+    color: #0060B6;
+    text-decoration: none;
+}
+#News a:hover
+{
+     text-decoration:none;
+     cursor:pointer;
+     color:#00A0C6;
+}
+#news-content{
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px;
+/*    -webkit-column-rule: 3px white; /* Chrome, Safari, Opera */
+/*    -moz-column-rule: 3pxwhite;  Firefox
+    column-rule: 3px  white;*/
+    -webkit-column-width: 200px; /* Chrome, Safari, Opera */
+    -moz-column-width: 200px; /* Firefox */
+    column-width: 200px;
+    margin:0;
+}
+li{
+  width:80%;
+  height:5%;
+  padding:5px;
+  background-color: #c2b7a7;
+}
+li:hover{
+  background-color:#a7b2c2;
+  color:#00A0C6;
+}
+  h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+  section{
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:space-around;
+    background-color: #b8ab98;
+    flex-content:space-around;
+    padding:30px;
+  }
+  div{
+    color:#0060B6;
+  }
+  h3{
+      color:blue;
+      color:#099Af8;
+      margin-left:calc(35%);
+    }
+  ul{
+    padding:0px;
+    margin:0;
+  }
+
+</style>

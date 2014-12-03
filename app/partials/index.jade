@@ -1,0 +1,5 @@
+div
+  img#bgimg(src="../../images/background.jpg")
+  h2 Cities
+  ul(ng-repeat="city in this.cities")
+    li: a(ng-href="/cities/{{city}}" {{city}})

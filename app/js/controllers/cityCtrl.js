@@ -13,10 +13,18 @@ angular.module('controllers').controller('CityCtrl', function($scope, $routePara
     })
     .then(function(forecast) {
       self.forecast = forecast.data;
+      self.currentFore = forecast.data.currently;
       return news(self.cityName);
     })
     .then(function(news) {
       self.news = news;
+      self.listNews = [];
+      for(var i = 0; i < news.length; i++){
+        var newsObj = {};
+        newsObj.title = news[i].title.split(' - ')[0];
+        newsObj.url = news[i].href.split('url=')[1];
+        self.listNews.push(newsObj);
+      }
     })
     .catch(function(err) {
       $log.error(err);
