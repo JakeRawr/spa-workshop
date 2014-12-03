@@ -1,0 +1,14 @@
+<h1>{{this.cityName}}</h1>
+
+<h3>Forecast</h3>
+<div data-ng-repeat="(key, value) in this.currentFore">
+  <td> {{key}} </td> : <td> {{value | json}} </td>
+</div>
+
+<h3>News</h3>
+<div data-ng-repeat="value in this.listNews">
+  <ul>
+    <a href="{{value.url}}"> {{value.title}} </a>
+  </ul>
+</div>
+
