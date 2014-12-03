@@ -1,0 +1,9 @@
+h1 {{this.cityName}}
+h3 Forecast
+div(data-ng-repeat='(key, value) in this.currentFore')
+  td {{key}}
+  | :
+  td {{value | json }}
+td {{this.forecast | json}}
+h3 News
+div {{this.news | json}}
