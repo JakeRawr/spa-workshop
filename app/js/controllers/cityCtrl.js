@@ -23,7 +23,7 @@ angular.module('controllers').controller('CityCtrl', function($scope, $routePara
       self.listNews = [];
       for(var i = 0; i < news.length; i++){
         var newsObj = {};
-        newsObj.title = news[i].title;
+        newsObj.title = news[i].title.split(' - ')[0];
         newsObj.url = news[i].href.split('url=')[1];
         self.listNews.push(newsObj);
       }
