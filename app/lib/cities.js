@@ -1,8 +1,5 @@
-angular.module('services').factory('geoLocation', function($q, $timeout) {
-  // TODO: Enhance this service to use a GeoLocation API such as the Google maps API
-  // https://developers.google.com/maps/documentation/javascript/geocoding
 
-  var cities =
+module.exports = function() {
   [
      {'city': 'New York, NY, USA', 'll': '40.7143528,-74.00597309999999'}
     ,{'city': 'Manhattan, New York, NY, USA', 'll': '40.7834345,-73.9662495'}
@@ -309,28 +306,4 @@ angular.module('services').factory('geoLocation', function($q, $timeout) {
     ,{'city': 'Centennial, CO, USA', 'll': '39.5807452,-104.8771726'}
     ,{'city': 'Temecula, CA, USA', 'll': '33.4936391,-117.1483648'}
   ];
-  // For now just hardcoding the lat/long for our test cities
-  return function(city,state) {
-    var latLong = null;
-    var deferred = $q.defer();
-
-    var cityString = city + ', ' + state + ', USA';
-    console.log(cityString);
-    for(var i = 0; i < cities.length; i++){
-      if(cities[i].city == cityString){
-        latLong = cities[i].ll.split(',');
-        break;
-      }
-      latlong = [47.6062,-122.3321];
-    }
-
-    console.log(latLong);
-
-    // Use a $q resolved to simulate a $http call that returns a promise
-    $timeout(function() {
-      deferred.resolve(latLong);
-    }, 20);
-    return deferred.promise;
-  };
-});
-
+}

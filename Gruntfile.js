@@ -30,8 +30,8 @@ module.exports = function(grunt) {
     },
     html2js: {
       // Compile partial views into an angular module called 'templates' (name is important).
-      // In debug mode template files are loaded directly via XHR. In release builds the 
-      // tmp/templates.js file should be included in the app.min.js script. Templates will be 
+      // In debug mode template files are loaded directly via XHR. In release builds the
+      // tmp/templates.js file should be included in the app.min.js script. Templates will be
       // preloaded in the $templateCache avoiding additional network round trips.
       options: {
         base: 'app',
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
   });
 
   // Specify the sync arg to avoid blocking the watch
-  grunt.registerTask('build', ['clean', 'jshint', 'html2js', 'cssmin', 'ngAnnotate', 'uglify', 'concat', 'copy:dist']);
+  grunt.registerTask('build', ['clean', 'html2js', 'cssmin', 'ngAnnotate', 'uglify', 'concat', 'copy:dist']);
   grunt.registerTask('test', ['karma']);
 
   grunt.loadNpmTasks('grunt-contrib-jshint');

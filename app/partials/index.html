@@ -1,8 +1,28 @@
 <div>
-  <h2>Cities</h2>
-  <ul ng-repeat="city in this.cities">
-    <li><a ng-href="/cities/{{city}}">{{city}}</a>
-  </ul>
+  <form>
+  <input type="text" placeholder="City, i.e: Seattle" data-ng-model="newCity">
+  <input type="text" placeholder="State, i.e: WA" data-ng-model="state">
+  <button id="submit"><a ng-href='/cities/{{newCity}}/{{state}}'>Go</a></button>
+  </form>
 </div>
 
+<style>
+form input[type="text"] {
+height: 40%;
+width: 40%;
+margin: 0;
+padding: 0;
+font-size: 50px;
+}
+#submit{
+  height:60px;
+  width:60px;
+  background-color: #0060B6;
+  border-radius: 30%;
+  font-size:2em;
+  text-decoration:none;
+  cursor:pointer;
+  color:#00A006;
+}
 
+</style>
