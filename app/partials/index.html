@@ -1,6 +1,6 @@
 <div>
   <h2>Cities</h2>
-  <ul ng-repeat="city in this.cities">
-    <li><a ng-href="/cities/{{city}}">{{city}}</a>
-  </ul>
+  Search for a city:
+  <input type="text" placeholder="city, i.e: Seattle" data-ng-model="newCity"> <input type="text" placeholder="State, i.e: WA" data-ng-model="state">
+  <a ng-href='/cities/{{newCity}}/{{state}}'>Go</a>
 </div>

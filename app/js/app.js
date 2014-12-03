@@ -30,7 +30,7 @@ angular.module('directives', []);
         controllerAs: 'this',
         templateUrl: templateUrl('partials/index.html')
       })
-      .when('/cities/:city', {
+      .when('/cities/:city/:state', {
         controller: 'CityCtrl',
         controllerAs: 'this',
         templateUrl: templateUrl('partials/city.html')
